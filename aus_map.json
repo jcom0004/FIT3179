@@ -13,11 +13,11 @@
             "data": {
               "url": "https://raw.githubusercontent.com/jcom0004/FIT3179/main/Number%20of%20post%20grad%20degrees%20by%20state.csv"
         },
-        "key": "STATE_NAME",
+        "key": "State",
         "fields": ["Degrees"]
-       }
-     },
-     {"calculate": "datum.Degrees", "as": "Degrees 000's"}
+          }
+       },
+        {"calculate": "datum.Degrees", "as": "Thousands of Degrees"} 
     ],
   "projection": {
     "type": "equirectangular"
@@ -25,9 +25,8 @@
     "mark": {"type": "geoshape"},
     "encoding": {
     "color": {
-      "field": "Degrees 000's",
-      "type": "quantitative",
-      "scale": {"type": "linear"}
-    },
+      "field": "Thousands of Degrees",
+      "type": "quantitative"
+    }
  }
 }
