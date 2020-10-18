@@ -3,30 +3,29 @@
   "width": 800,
   "height": 500,
   "title": "Number of Postgraduate Degrees in Australia",
-  "projection": {"type": "equalEarth"},
-  "layer": [
-    {
-      "data": {
-        "url": "https://raw.githubusercontent.com/jcom0004/FIT3179/main/aus_state.json",
-        "format": {"type": "topojson", "feature": "aus_state"}
+  "data": {
+     "url": "https://raw.githubusercontent.com/jcom0004/FIT3179/main/aus_state.json",
+     "format": {"type": "topojson", "feature": "aus_state"}
       },
-      "transform": [
-        {
+      "transform": [{
           "lookup": "properties.STATE_NAME",
           "from": {
             "data": {
               "url": "https://raw.githubusercontent.com/jcom0004/FIT3179/main/Number%20of%20post%20grad%20degrees%20by%20state.csv"
         },
         "key": "STATE_NAME",
-        "fields": ["State"]
+        "fields": ["Degrees"]
        }
      },
      {"calculate": "datum.Degrees", "as": "Degrees 000's"}
     ],
+  "projection": {
+    "type": "equirectangular"
+  },
     "mark": {"type": "geoshape"},
     "encoding": {
     "color": {
-      "field": "Degrees",
+      "field": "Degrees 000's",
       "type": "quantitative",
       "scale": {"type": "linear"}
     },
