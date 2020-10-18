@@ -14,10 +14,10 @@
               "url": "https://raw.githubusercontent.com/jcom0004/FIT3179/main/Number%20of%20post%20grad%20degrees%20by%20state.csv"
         },
         "key": "State",
-        "fields": ["Degrees"]
+        "fields": ["Degrees", "Population]
           }
        },
-        {"calculate": "datum.Degrees", "as": "Thousands of Degrees"} 
+        {"calculate": "datum.Degrees/datum.Population *10000", "as": "Degrees per 10k People"} 
     ],
   "projection": {
     "type": "equirectangular"
@@ -25,7 +25,7 @@
     "mark": {"type": "geoshape"},
     "encoding": {
     "color": {
-      "field": "Thousands of Degrees",
+      "field": "Degrees per 10k People",
       "type": "quantitative"
     }
  }
