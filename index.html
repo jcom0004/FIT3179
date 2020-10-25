@@ -12,13 +12,21 @@
   
 </head>
 <body>
-  
+  <h1>Visualisation 1</h1>  
 <div id="aus_map"></div>
+  
+  <h2>Visualisation 2</h2>
+  <div id="bar_chart"></div>
 
 <script type="text/javascript">
 
   var spec = "https://raw.githubusercontent.com/jcom0004/FIT3179/main/aus_map.json";
+  var spec1 = "https://raw.githubusercontent.com/jcom0004/FIT3179/main/bar_chart.json";
   vegaEmbed('#aus_map', spec).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  
+  vegaEmbed('#bar_chart', spec1).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 
