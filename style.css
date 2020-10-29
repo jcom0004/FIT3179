@@ -1,11 +1,11 @@
-#aus_map {
+aus_map {
 	position:absolute;
 	top:50px; 
 	left: 200px;
 	/*height: 1000px;
 	width: 800px;*/
 }
-#world_map {
+world_map {
 	position:absolute;
 	top:50px; 
 	left: 200px;
