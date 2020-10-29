@@ -1,12 +1,12 @@
 #aus_map {
-	position:absolute; 
+	position:relative; 
 	left: 400px;
 }
 #world_map {
-	position:absolute; 
+	position:relative; 
 	left: 400px;
 }
 h1 {
-	position:absolute;
+	position:relative;
 	left: 400px
 }
