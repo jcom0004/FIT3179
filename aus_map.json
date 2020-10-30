@@ -1,8 +1,16 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": 600,
+  "description": "Number of Postgraduate Degrees in Australia",
+  "background": "cornsilk",
+  "repeat": {"row": ["Postgrad per 10k People", "Undergrad per 10k People", "Diploma per 10k People"]},
+    "resolve": {
+    "scale": {
+      "color": "independent"
+    }
+  },
+  "spec":{   
+  "width": 500,
   "height": 300,
-  "title": "Number of Postgraduate Degrees in Australia",
   "data": {
      "url": "https://raw.githubusercontent.com/jcom0004/FIT3179/main/aus_state.json",
      "format": {"type": "topojson", "feature": "aus_state"}
@@ -11,22 +19,26 @@
           "lookup": "properties.STATE_NAME",
           "from": {
             "data": {
-              "url": "https://raw.githubusercontent.com/jcom0004/FIT3179/main/Number%20of%20post%20grad%20degrees%20by%20state.csv"
+              "url": "https://raw.githubusercontent.com/jcom0004/FIT3179/main/Post_Under.csv"
         },
         "key": "State",
-        "fields": ["Degrees", "Population"]
+        "fields": ["Postgrad", "Undergrad", "Diploma", "Population", "State"]
           }
        },
-        {"calculate": "datum.Degrees/datum.Population *10000", "as": "Degrees per 10k People"} 
+        {"calculate": "datum.Postgrad/datum.Population *10000", "as": "Postgrad per 10k People"},
+        {"calculate": "datum.Undergrad/datum.Population *10000", "as": "Undergrad per 10k People"},
+        {"calculate": "datum.Diploma/datum.Population *10000", "as": "Diploma per 10k People"}
     ],
   "projection": {
     "type": "equirectangular"
   },
-    "mark": {"type": "geoshape"},
+    "mark": {"type": "geoshape", "stroke":"black"},
     "encoding": {
     "color": {
-      "field": "Degrees per 10k People",
+      "field": {"repeat": "row"},
       "type": "quantitative"
-    }
- }
+    },
+    "tooltip": [{"field": "State", "type": "nominal", "title": "State or Territory"},
+    {"field": {"repeat": "row"}}]
+ }}
 }
