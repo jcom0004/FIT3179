@@ -1,8 +1,9 @@
 #aus_map {
 	position:relative; 
-	left: 400px;
 }
 #world_map {
+	width:80%;
+	height:50%;
 	position:relative; 
 	left: 400px;
 }
