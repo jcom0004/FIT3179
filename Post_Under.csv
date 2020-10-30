@@ -1,9 +1,9 @@
-State,Postgrad,Undergrad
-New South Wales,452900,1216700
-Victoria,380600,1020000
-Queensland,189200,588800
-South Australia,63000,188900
-Western Australia,102300,309000
-Tasmania,23400,60100
-Northern Territory,13600,26300
-Australian Capital Territory,44500,71600
+State,Postgrad,Undergrad,Diploma,Population
+New South Wales,452900,1216700,600200,8157700
+Victoria,380600,1020000,502900,6689400
+Queensland,189200,588800,357000,5160000
+South Australia,63000,188900,108600,1767200
+Western Australia,102300,309000,190800,2656200
+Tasmania,23400,60100,32200,539600
+Northern Territory,13600,26300,14200,245400
+Australian Capital Territory,44500,71600,29800,429800
