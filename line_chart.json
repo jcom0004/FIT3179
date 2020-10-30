@@ -1,0 +1,25 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "data": {"url": "https://raw.githubusercontent.com/jcom0004/FIT3179/main/share-of-the-population-with-completed-tertiary-education%20(1).csv"},
+    "transform": [
+    {
+      "filter": {
+        "field": "Entity",
+        "oneOf": ["China", "India", "United States of America", "Australia", "Brazil", "United Kingdom", "Russia"]
+      }
+    }
+  ],
+  "repeat": {},
+  "spec": {
+    "mark": "line",
+    "encoding": {
+      "color":{"field": "Entity", "type": "nominal"},
+      "x": {"field": "Year", "type": "ordinal"},
+      "y": {
+        "field": "Percentage",
+        "type": "quantitative",
+        "title": "Percentage of Population with Tertiary Education"
+      }
+    }
+  }
+}
