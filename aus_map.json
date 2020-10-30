@@ -1,11 +1,10 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "description": "Number of Postgraduate Degrees in Australia",
   "background": "cornsilk",
-  "repeat": {"row": ["Postgrad per 10k People", "Undergrad per 10k People", "Diploma per 10k People"]},
+  "repeat": {"column": ["Postgrad per 10k People", "Undergrad per 10k People", "Diploma per 10k People"]},
     "resolve": {
     "scale": {
-      "color": "independent"
+      "color": "shared"
     }
   },
   "spec":{   
@@ -32,13 +31,14 @@
   "projection": {
     "type": "equirectangular"
   },
-    "mark": {"type": "geoshape", "stroke":"black"},
+    "mark": {"type": "geoshape", "stroke":"white"},
     "encoding": {
     "color": {
-      "field": {"repeat": "row"},
-      "type": "quantitative"
+      "field": {"repeat": "column"},
+      "type": "quantitative",
+      "legend": {"title": "Qualifications per 10k People"}
     },
     "tooltip": [{"field": "State", "type": "nominal", "title": "State or Territory"},
-    {"field": {"repeat": "row"}}]
- }}
-}
+    {"field": {"repeat": "column"}, "format": ".2f"}]
+ }
+}}
