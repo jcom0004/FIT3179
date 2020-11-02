@@ -9,7 +9,7 @@
   },
   "spec":{   
   "width": 500,
-  "height": 300,
+  "height": 500,
   "data": {
      "url": "https://raw.githubusercontent.com/jcom0004/FIT3179/main/aus_state.json",
      "format": {"type": "topojson", "feature": "aus_state"}
