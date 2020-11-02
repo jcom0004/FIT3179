@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "background":"mintcream",
+  "background":"#F5FFEA",
   "repeat": {"column": ["Postgrad per 10k People", "Undergrad per 10k People", "Diploma per 10k People"]},
     "resolve": {
     "scale": {
