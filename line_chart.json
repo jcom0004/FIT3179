@@ -13,13 +13,21 @@
   "spec": {
     "mark": "line",
     "encoding": {
-      "color":{"field": "Entity", "type": "nominal"},
+      "color":{"field": "Entity", "type": "nominal",  "scale": {"range": [
+              "#1b9e77",
+              "#d95f02",
+              "#7570b3",
+              "#386cb0",
+              "#666666",
+              "#e6ab02",
+              "#a6761d"
+            ]}, "legend": {"title": "Country"}},
       "x": {"field": "Year", "type": "ordinal"},
       "y": {
         "field": "Percentage",
         "type": "quantitative",
-        "title": "Percentage of Population with Tertiary Education"
-      }
+        "title": "Population Percentage with Tertiary Qualification"
+      }, "tooltip": [{"field": "Entity"},{"field": "Percentage"}]
     }
   }
 }
