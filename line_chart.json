@@ -12,8 +12,8 @@
   ],
   "repeat": {},
   "spec": {
-  "width": 250,
-  "height": 600,
+  "width": 500,
+  "height": 500,
     "mark": "line",
     "encoding": {
       "color":{"field": "Entity", "type": "nominal",  "scale": {"range": [
