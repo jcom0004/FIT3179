@@ -1,5 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "background": "mintcream"
   "data": {"url": "https://raw.githubusercontent.com/jcom0004/FIT3179/main/share-of-the-population-with-completed-tertiary-education%20(1).csv"},
     "transform": [
     {
