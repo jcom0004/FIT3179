@@ -1,7 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": 800,
-  "height": 600,
   "data": {"url": "https://raw.githubusercontent.com/jcom0004/FIT3179/main/share-of-the-population-with-completed-tertiary-education%20(1).csv"},
     "transform": [
     {
@@ -13,6 +11,8 @@
   ],
   "repeat": {},
   "spec": {
+  "width": 800,
+  "height": 600,
     "mark": "line",
     "encoding": {
       "color":{"field": "Entity", "type": "nominal",  "scale": {"range": [
