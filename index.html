@@ -17,10 +17,10 @@
 <div id="world_map"></div>
   
   <h2>Visualisation 2</h2>
-  <div id="bar_chart"></div> <div id="line_chart"></div>
+  <div id="line_chart"></div> <div id="scatter_plot"></div>
   
     <h2>Visualisation 3</h2>
-  
+  <div id="bar_chart"></div>
   
   <h2>Visualisation 4</h2>
   <div id="aus_map"></div>
@@ -49,7 +49,7 @@
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
   
-  vegaEmbed('#line_chart', spec4).then(function(result) {
+  vegaEmbed('#scatter_plot', spec4).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 
