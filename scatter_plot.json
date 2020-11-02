@@ -1,0 +1,83 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": 800,
+  "height": 600,
+  "title": "Tertiary Education Expenditure vs Total Tertiary Qualifications",
+  "data": {
+    "url": "https://raw.githubusercontent.com/jcom0004/FIT3179/main/Expenditure%20vs%20Education%20Rate.csv"
+  },
+  "params": [
+    {
+      "name": "Expenditure_Above",
+      "value": 0,
+      "bind": {
+        "input": "range",
+        "min": 0,
+        "max": 2.5,
+        "step": 0.1,
+        "name": "Minimum GDP Percentage: "
+      }
+    },
+        {
+      "name": "Education_Above",
+      "value": 0,
+      "bind": {
+        "input": "range",
+        "min": 0,
+        "max": 30,
+        "step": 0.5,
+        "name": "Minimum Tertiary Qualification Percentage: "
+      }
+    }
+  ],
+  "transform": [
+    {"filter": "datum.EducationP > Education_Above"},
+    {"filter": "datum.SpendingP > Expenditure_Above"}
+
+  ],
+  "encoding": {
+    "x": {
+      "field": "SpendingP",
+      "type": "quantitative",
+      "title": "Percentage of GDP Spent on Education",
+      "axis": {"tickCount": 7},
+      "scale": {"type": "linear", "domain": [0, 2.5]}
+    },
+    "y": {
+      "field": "EducationP",
+      "type": "quantitative",
+      "title": "Percentage of Population with Tertiary Qualification",
+      "axis": {"tickCount": 7},
+      "scale": {"type": "linear", "domain": [1, 35]}
+    }
+  },
+  "layer": [{
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "middle",
+        "dx": -12,
+        "fontSize": 12.5,
+        "fontStyle": "Italic"
+      },
+      "encoding": {
+        "text": {"field": "Country", "type": "nominal"},
+        "color": {"value": "black"},
+        "opacity": {
+          "condition": {
+            "test": "datum['Country'] == 'China' || datum['Country'] == 'Singapore' || datum['Country'] == 'Australia' || datum['Country'] == 'New Zealand' || datum['Country'] == 'United Kingdom' || datum['Country'] == 'Russia' ||  datum['Country'] == 'United States of America' ||  datum['Country'] == 'South Korea' ||  datum['Country'] == 'India'",
+            "value": 1
+          },
+          "value": 0
+        }
+      }
+    },
+      {
+      "mark": "circle",
+      "encoding": { "x": {"field": "SpendingP", "type": "quantitative"},
+    "y": {"field": "EducationP", "type": "quantitative"}
+      , "tooltip": [{"field": "Country", "type": "nominal"},{"field": "EducationP", "type": "quantitative", "format": ",", "title": "Tertiary Educated %"}, {"field": "SpendingP", "type": "quantitative", "format": "", "title": "Percentage of GDP"}]
+    }
+    }
+  ]
+}
