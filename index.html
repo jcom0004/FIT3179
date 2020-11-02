@@ -12,7 +12,7 @@
   
 </head>
 <body>
-  <h1> How Educated is Australia?</h1>
+  <h1> How Tertiary Educated is Australia?</h1>
   <h2>Visualisation 1</h2>  
 <div id="world_map"></div>
   
@@ -31,6 +31,7 @@
   var spec1 = "https://raw.githubusercontent.com/jcom0004/FIT3179/main/bar_chart.json";
   var spec2 = "https://raw.githubusercontent.com/jcom0004/FIT3179/main/world_map.json";
   var spec3 = "https://raw.githubusercontent.com/jcom0004/FIT3179/main/line_chart.json";
+  var spec4 = "https://raw.githubusercontent.com/jcom0004/FIT3179/main/scatter_plot.json";
   
   vegaEmbed('#aus_map', spec).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
@@ -45,6 +46,10 @@
   }).catch(console.error);
   
   vegaEmbed('#world_map', spec2).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  
+  vegaEmbed('#line_chart', spec4).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 
