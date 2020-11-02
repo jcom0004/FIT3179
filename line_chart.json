@@ -27,7 +27,7 @@
         "field": "Percentage",
         "type": "quantitative",
         "title": "Population Percentage with Tertiary Qualification"
-      }, "tooltip": [{"field": "Entity"},{"field": "Percentage"}]
+      }, "tooltip": [{"field": "Entity", "title": "Country"},{"field": "Percentage"}]
     }
   }
 }
